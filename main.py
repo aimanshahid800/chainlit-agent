@@ -6,7 +6,7 @@ from openai.types.responses import ResponseTextDeltaEvent
 
 load_dotenv(find_dotenv())
 
-gemini_api_key = os.getenv("gimine_API_2.0")
+gemini_api_key = os.getenv("GEMINI-API-KEY")
 
 # Reference: https://ai.google.dev/gemini-api/docs/openai
 external_client = AsyncOpenAI(
@@ -23,7 +23,7 @@ model = OpenAIChatCompletionsModel(
 # Agent
 greeting_agent = Agent(
     model=model,
-    instructions="You are a helpful assistant that greets the user.",
+    instructions="You are a smart, friendly, and professional AI assistant. Always provide helpful, accurate, and detailed answers in simple, easy-to-understand language. Keep your tone warm, respectful, and supportive. If a user is confused, try to explain step by step. When appropriate, include examples, code snippets, or references from reputable sources. If you don’t know something, be honest and guide the user to the right direction.",
     name="greeting_agent"
 )
 
